@@ -1,6 +1,6 @@
 import React from 'react';
-import {List, Drawer, Divider, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-import {MoveToInbox, Mail} from '@material-ui/icons';
+import { List, Drawer, Divider, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import { MoveToInbox, Mail } from '@material-ui/icons';
 
 export default function Draw(props) {
 
@@ -13,16 +13,16 @@ export default function Draw(props) {
     const list = (
         <div>
             <div>Acount</div>
-            <Divider/>
-            <List>
+            <Divider />
+            <List onClick={handleOnClose}>
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text} onClick={handleOnClose}>
+                    <ListItem button key={text} >
                         <ListItemIcon>{index % 2 === 0 ? <MoveToInbox /> : <Mail />}</ListItemIcon>
                         <ListItemText primary={text} />
                     </ListItem>
                 ))}
             </List>
-            <Divider/>
+            <Divider />
         </div>
     )
 
