@@ -12,17 +12,19 @@ export default function Draw(props) {
 
     const list = (
         <div>
-            <div>Acount</div>
-            <Divider />
             <List onClick={handleOnClose}>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                {['Inbox', 'Starred', 'Send email'].map((text, index) => (
                     <ListItem button key={text} >
                         <ListItemIcon>{index % 2 === 0 ? <MoveToInbox /> : <Mail />}</ListItemIcon>
                         <ListItemText primary={text} />
                     </ListItem>
                 ))}
+                <Divider />
+                <ListItem button key={'Inbox'} >
+                    <ListItemIcon><MoveToInbox /></ListItemIcon>
+                    <ListItemText primary={'Inbox'} />
+                </ListItem>
             </List>
-            <Divider />
         </div>
     )
 
